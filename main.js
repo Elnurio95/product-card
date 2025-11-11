@@ -1,26 +1,24 @@
-const green = '#00FF00'; 
-const black = '#111'; 
-
 //закрасить одну карточку 
 const firstCard = document.querySelector('.card-container');
 const changeFirstColorCardBtn = document.querySelector('#change-first-card-color-btn'); 
+const greenCard = '#00FF00'; 
 
 changeFirstColorCardBtn.addEventListener('click', () => {
-   firstCard.style.backgroundColor = green;  
+    firstCard.style.backgroundColor = greenCard;  
 }); 
 
 //закрасить все карточки 
 const productCards = document.querySelectorAll('.card-container'); 
 const changeAllcardsColorBtn = document.querySelector('#change-cards-color-btn'); 
+const blackCards = '#111'; 
 
 changeAllcardsColorBtn.addEventListener('click', () => {
-    productCards.forEach((card) => card.style.backgroundColor = black); 
-    console.log('hello');
+    productCards.forEach((card) => card.style.backgroundColor = blackCards); 
 }); 
 
 //открыть гугл 
-const openWindow = document.querySelector('#open-google'); 
-openWindow.addEventListener('click', openGoogleBtn); 
+const btnOpenWindow = document.querySelector('#open-google'); 
+btnOpenWindow.addEventListener('click', openGoogleBtn); 
 
 function openGoogleBtn() {
     const answer = confirm('Вы дейстивтельно хотите открыть Google ?'); 
@@ -34,9 +32,9 @@ function openGoogleBtn() {
 
 //консоль лог 
 
-const outputLOgButton = document.querySelector('#output-console-log'); 
+const outputLogButton = document.querySelector('#output-console-log'); 
 
-outputLOgButton.addEventListener('click', () => outputConsoleLog('ДЗ №4')); 
+outputLogButton.addEventListener('click', () => outputConsoleLog('ДЗ №4')); 
 
 function outputConsoleLog(message) {
     alert(message); 
@@ -45,13 +43,13 @@ function outputConsoleLog(message) {
 
 //вывести контент элемента 
 
-const contentElement = document.querySelector('.main-title'); 
-contentElement.addEventListener('mousemove', () => console.log(contentElement.textContent));
+const contentMainTitle = document.querySelector('.main-title'); 
+contentMainTitle.addEventListener('mousemove', () => console.log(contentMainTitle.textContent));
 
 //смена цвета кнопки при нажатии 
  
-const changeBtnColor = document.querySelector('#change-btn-color'); 
+const changeBtnColor = document.querySelector('.change-btn-color'); 
 
 changeBtnColor.addEventListener('click', ()=> {
-    changeBtnColor.classList.toggle('yellow');
+    changeBtnColor.classList.toggle('toggledColor');
 })
