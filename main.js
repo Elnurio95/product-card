@@ -50,7 +50,6 @@ mainTitle.addEventListener('mousemove', () => console.log(mainTitle.textContent)
  
 const changeBtnColor = document.querySelector('#change-btn-color'); 
 
-
 changeBtnColor.addEventListener('click', ()=> {
-    changeBtnColor.classList.toggle('yellow');
+    changeBtnColor.classList.toggle('bg-yellow');
 })
