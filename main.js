@@ -1,19 +1,19 @@
 //закрасить одну карточку 
 const firstCard = document.querySelector('.card-container');
 const changeFirstColorCardBtn = document.querySelector('#change-first-card-color-btn'); 
-const greenCard = '#00FF00'; 
+const firstCardColor = '#00FF00'; 
 
 changeFirstColorCardBtn.addEventListener('click', () => {
-    firstCard.style.backgroundColor = greenCard;  
+    firstCard.style.backgroundColor = firstCardColor;  
 }); 
 
 //закрасить все карточки 
 const productCards = document.querySelectorAll('.card-container'); 
 const changeAllcardsColorBtn = document.querySelector('#change-cards-color-btn'); 
-const blackCards = '#111'; 
+const allCardsColor = '#111'; 
 
 changeAllcardsColorBtn.addEventListener('click', () => {
-    productCards.forEach((card) => card.style.backgroundColor = blackCards); 
+    productCards.forEach((card) => card.style.backgroundColor = allCardsColor); 
 }); 
 
 //открыть гугл 
@@ -43,13 +43,14 @@ function outputConsoleLog(message) {
 
 //вывести контент элемента 
 
-const contentMainTitle = document.querySelector('.main-title'); 
-contentMainTitle.addEventListener('mousemove', () => console.log(contentMainTitle.textContent));
+const mainTitle = document.querySelector('.main-title'); 
+mainTitle.addEventListener('mousemove', () => console.log(mainTitle.textContent));
 
 //смена цвета кнопки при нажатии 
  
-const changeBtnColor = document.querySelector('.change-btn-color'); 
+const changeBtnColor = document.querySelector('#change-btn-color'); 
+
 
 changeBtnColor.addEventListener('click', ()=> {
-    changeBtnColor.classList.toggle('toggledColor');
+    changeBtnColor.classList.toggle('yellow');
 })

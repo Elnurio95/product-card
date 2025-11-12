@@ -104,6 +104,6 @@ li {
     line-height: 24px;
 }
 
-.toggledColor { 
-    background-color: #FFFF00;
+#change-btn-color.yellow {
+    background-color: yellow;
 }
