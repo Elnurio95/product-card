@@ -1,27 +1,27 @@
 //Задача 1 
 /*Создать функцию, которая принимает 2 параметра: город и температуру и выводит сообщение в консоль "Сейчас в X температура  — Y градусов по Цельсию" */ 
 
-function cityTemperature(city, temp) {
+function showCityTemperature(city, temp) {
     console.log(`Сейчас в ${city} температура ${temp} градусов по Цельсию`); 
 }
 
-cityTemperature('Москва', 5); 
+showCityTemperature('Москва', 5); 
 
 //Задача 2
 
 /*Создать переменную, которая хранит внутри себя скорость звука (гуглим). Создать функцию, которая принимает 1 параметр - скорость, внутри функции происходит проверка: если переданная скорость выше скорости звука - выводим лог "Сверхзвуковая скорость", если ниже - "Дозвуковая скорость" */
 
-const soundSpeed = 343; 
+const SOUND_SPEED = 343; 
 
-function compareSpeed(speed) {
-    if (speed > soundSpeed) {
+function isFaster(speed) {
+    if (speed > SOUND_SPEED) {
         console.log("Сверхзвуковая скорость");
     } else {
         console.log("Дозвуковая скорость");
     }
 }
 
-compareSpeed(343); 
+isFaster(343); 
 
 //Задача 3 
 /* Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение). Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, внутри функции происходит проверка: если бюджет превышает цену товара - выводим лог "(ваше название товара) приобретён. Спасибо за покупку!", если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс". */
@@ -29,14 +29,14 @@ compareSpeed(343);
 const product = 'code courses'; 
 const price = 10000; 
 
-function productBudget(budget) {
+function calculateProductBudget(budget) {
     if (budget > price) {
         console.log(`${product} приобретен. Спасибо за покупку!`);
     } else {
-        const balance = price-budget; 
-        console.log(`Вам не хватает ${balance}$, пополните баланс.`)
+        const amount = price - budget; 
+        console.log(`Вам не хватает ${amount}$, пополните баланс.`)
     }
 }
 
-productBudget(2000); 
+calculateProductBudget(2000); 
 
