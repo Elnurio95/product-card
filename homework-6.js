@@ -89,7 +89,7 @@ getArrays(allArrays);
 //     return allArrays.map(item => {
 //         return {
 //             ...item, 
-//             isRare: item.year > 2000 ? 'Да' : 'Нет'
+//             isRare: item.year < 2000 ? 'Да' : 'Нет'
 //         }
 //     })
 // }
