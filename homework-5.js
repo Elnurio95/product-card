@@ -26,15 +26,15 @@ isFaster(343);
 //Задача 3 
 /* Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение). Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, внутри функции происходит проверка: если бюджет превышает цену товара - выводим лог "(ваше название товара) приобретён. Спасибо за покупку!", если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс". */
 
-const product = 'code courses'; 
-const price = 10000; 
+const productName = 'code courses'; 
+const productPrice = 10000; 
 
-function calculateProductBudget(budget) {
-    if (budget > price) {
-        console.log(`${product} приобретен. Спасибо за покупку!`);
+function calculateProductBudget(myBudget) {
+    if (myBudget > productPrice) {
+        console.log(`${productName} приобретен. Спасибо за покупку!`);
     } else {
-        const amount = price - budget; 
-        console.log(`Вам не хватает ${amount}$, пополните баланс.`)
+        const moneyDifference = myBudget - productPrice; 
+        console.log(`Вам не хватает ${moneyDifference}$, пополните баланс.`)
     }
 }
 
