@@ -32,7 +32,7 @@
     position: relative;
 }
 
-.bg_image {
+.bg-image {
     position: absolute;
     background-image: url("/img/background.png");
     background-repeat: no-repeat;

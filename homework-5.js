@@ -11,17 +11,17 @@ showCityTemperature('Москва', 5);
 
 /*Создать переменную, которая хранит внутри себя скорость звука (гуглим). Создать функцию, которая принимает 1 параметр - скорость, внутри функции происходит проверка: если переданная скорость выше скорости звука - выводим лог "Сверхзвуковая скорость", если ниже - "Дозвуковая скорость" */
 
-const SOUNDSPEED = 343; 
+const SOUND_SPEED = 343; 
 
-function isFaster(speed) {
-    if (speed > SOUNDSPEED) {
+function getFaster(speed) {
+    if (speed > SOUND_SPEED) {
         console.log("Сверхзвуковая скорость");
     } else {
         console.log("Дозвуковая скорость");
     }
 }
 
-isFaster(343); 
+getFaster(343); 
 
 //Задача 3 
 /* Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение). Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, внутри функции происходит проверка: если бюджет превышает цену товара - выводим лог "(ваше название товара) приобретён. Спасибо за покупку!", если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс". */
@@ -29,7 +29,7 @@ isFaster(343);
 const productName = 'code courses'; 
 const productPrice = 10000; 
 
-function calculateProductBudget(myBudget) {
+function buyProduct(myBudget) {
     if (myBudget > productPrice) {
         console.log(`${productName} приобретен. Спасибо за покупку!`);
     } else {
@@ -38,5 +38,15 @@ function calculateProductBudget(myBudget) {
     }
 }
 
-calculateProductBudget(2000); 
+buyProduct(2000); 
+
+ /* оздать 1 функцию и именовать её по своему усмотрению */ 
+ function getHomework() {}
+
+/* Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению */ 
+const taskName = 'homework'; 
+const taskNumber = 5; 
+const taskControlerName = 'Vlad'; 
+
+
 
