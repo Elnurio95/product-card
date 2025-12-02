@@ -11,10 +11,10 @@ showCityTemperature('Москва', 5);
 
 /*Создать переменную, которая хранит внутри себя скорость звука (гуглим). Создать функцию, которая принимает 1 параметр - скорость, внутри функции происходит проверка: если переданная скорость выше скорости звука - выводим лог "Сверхзвуковая скорость", если ниже - "Дозвуковая скорость" */
 
-const SPEEDOFSOUND = 343; 
+const SPEED_OF_SOUND = 343; 
 
-function compareValue(speed) {
-    if (speed > SPEEDOFSOUND) {
+function compareSpeed(speed) {
+    if (speed > SPEED_OF_SOUND) {
         console.log("Сверхзвуковая скорость");
     } else {
         console.log("Дозвуковая скорость");
