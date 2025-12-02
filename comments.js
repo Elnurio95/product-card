@@ -82,3 +82,66 @@ mailCom();
 
 /* Перебрать массив таким образом, что бы пользователи с id меньше или равно 5 имели postId: 2, а те, у кого id больше 5, имели postId: 1*/
 
+function changePostId() {
+  mediaComments.map((item) => {
+    if(item.postId <= 5) {
+      item.postId = 2; 
+    } else {
+      item.postId = 1; 
+    }
+  })
+}
+
+changePostId(); 
+
+/* Перебрать массив, что бы объекты состояли только из айди и имени */
+function getIdName() {
+  const newArr = mediaComments.map(item => ({
+    id: item.id, 
+    name: item.name, 
+  }))
+}
+
+getIdName(); 
+
+/* Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false. */
+
+function addIsInvalid() {
+  const validArr = mediaComments.map(item => {
+    if (item.body.length > 180) {
+      item.isInvalid = true; 
+    } else {
+      item.isInvalid = false; 
+    }
+  })
+}
+
+addIsInvalid();
+
+// Уровень 3:
+
+//11. Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть тоже самое с помощью метода map
+
+function getMails() {
+  const mailsArr = mediaComments.map(item => item.email);  
+  return mailsArr; 
+}
+
+getMails(); 
+
+const getMailsByReduce = () =>
+  mediaComments.reduce((acc, currentValue) => [...acc, currentValue.email], []);
+
+getMailsByReduce(); 
+
+
+
+//12. Почитать про методы toString(), join() и перебрав массив с задания №11, привести его к строке.
+
+function convertToString() {
+  const mails = getMails(); 
+  return mails.join("\n").toString(); 
+}
+
+convertToString(); 
+
