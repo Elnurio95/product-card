@@ -42,7 +42,7 @@ buyProduct(2000);
 
  /* создать 1 функцию и именовать её по своему усмотрению */ 
  function getHomework(taskName, taskNumber, taskControlerName) {
-    console.log(`Это задание называется: ${taskName}, номер задаяни: ${taskNumber}, а проверил преподаватель по имени ${taskControlerName}`); 
+    console.log(`Это задание называется: ${taskName}, номер задания: ${taskNumber}, а проверил преподаватель по имени ${taskControlerName}`); 
  }
 
  getHomework('домашка', 12, 'Влад'); 
