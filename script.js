@@ -39,13 +39,13 @@ getMaxSpeed(autoInfo);
 
 /*Написать функцию, которая получает первым аргументом  — объект, а вторым аргументом — свойство объекта, которое нужно вывести и выводит его значение. */
 
-function getValue(autoInfo, value) {
+function getObjValue(autoInfo, value) {
     if (value in autoInfo) {
         console.log(autoInfo[value]); 
     }
 }
 
-getValue(autoInfo, 'colour'); 
+getObjValue(autoInfo, 'colour'); 
 
 /* Создать массив, который содержит названия продуктов (просто строки)*/
 
@@ -78,12 +78,10 @@ console.log(allArrays);
 /*Почитать про метод массива — map. Написать функцию, которая принимает массив сущностей с задания №9. Добавляем новое свойство для объекта "isRare (это редкий)" и в зависимости от года выпуска книги (или какой-то логики, связанной с вашей сущностью), устанавливаем true или false. Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true (да, это редкий), нет - false (значит это не редкий).*/
 
 function getArrays(allArrays) {
-    return allArrays.map(item => {
-        return {
+    return allArrays.map(item => ({
             ...item, 
-            isRare: item.year < 2000 ? 'Да' : 'Нет'
-        }
-    })
+            isRare: item.year > 2000
+    }))
 }
 
 const result = getArrays(allArrays);
