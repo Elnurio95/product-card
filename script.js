@@ -29,13 +29,13 @@ autoInfo.owner = user;
 
 /* Написать функцию которая аргументом будет принимать объект, описанный в пункте №4. Она проверяет, есть ли в объекте свойство "максимальная скорость", если нет - добавляет его и задает значение, если есть - прекращает выполнение (ничего не делает) */
 
-function isMaxSpeed(autoInfo) {  
+function addMaxSpeed(autoInfo) {  
     if (!autoInfo.maxSpeed) {
         autoInfo.maxSpeed = 280;  
     }
 }
 
-isMaxSpeed(autoInfo); 
+addMaxSpeedMaxSpeed(autoInfo); 
 
 /*Написать функцию, которая получает первым аргументом  — объект, а вторым аргументом — свойство объекта, которое нужно вывести и выводит его значение. */
 
@@ -101,12 +101,12 @@ console.log(allArrays);
 
 /*Почитать про метод массива — map. Написать функцию, которая принимает массив сущностей с задания №9. Добавляем новое свойство для объекта "isRare (это редкий)" и в зависимости от года выпуска книги (или какой-то логики, связанной с вашей сущностью), устанавливаем true или false. Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true (да, это редкий), нет - false (значит это не редкий).*/
 
-function isRareBook(allArrays) {
-    return allArrays.map(item => ({
-            ...item, 
-            isRare: item.year > 2000
+function addRareBook(books) {
+    return books.map(book => ({
+            ...book, 
+            isRare: book.year > 2000
     }))
 }
 
-const result = isRareBook(allArrays);
+const result = addRareBook(books);
 console.log(result);
