@@ -3,13 +3,13 @@ import { mediaComments } from "./comments";
 
 //Уровень 1
 /*Создать массив чисел от 1 до 10. Отфильтровать его таким образом, что бы мы получил массив чисел, начиная с 5. */
-let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
-let filtered = array.filter(item => item >= 5); 
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+const filtered = array.filter(item => item >= 5); 
 console.log(filtered); 
 
 /* Создать массив строк, относящихся к любой сущности (название фильмов/книг, кухонные приборы, мебель и т.д.), проверить, есть ли в массиве какая-то определенная сущность.*/
 
-let fruits = ['яблоко', 'груша', 'малина', 'виноград', 'ананас', 'клубника']; 
+const fruits = ['яблоко', 'груша', 'малина', 'виноград', 'ананас', 'клубника']; 
 
 console.log(fruits.includes('ананас')); 
 
@@ -27,50 +27,43 @@ reverseArray(array);
 
 /* Вывести в консоль массив тех комментариев, почта пользователей которых содержит ".com" */
 
-function mailCom() {
-    let result =  mediaComments.filter( (item) => item.email.includes('.com')); 
+function includeMailsCom() {
+    const result = mediaComments.filter((item) => item.email.includes('.com')); 
     return result; 
 }
 
-mailCom(); 
+includeMailsCom(); 
 
 /* Перебрать массив таким образом, что бы пользователи с id меньше или равно 5 имели postId: 2, а те, у кого id больше 5, имели postId: 1*/
 
 function changePostId() {
-  mediaComments.map((item) => {
-    if(item.postId <= 5) {
-      item.postId = 2; 
-    } else {
-      item.postId = 1; 
-    }
-  })
+  mediaComments.forEach((item) => {
+    item.id <= 5 ? item.postId = 2 : item.postId = 1; 
+  });
 }
 
-changePostId(); 
+changePostId();
+
 
 /* Перебрать массив, что бы объекты состояли только из айди и имени */
-function getIdName() {
+function updateArr() {
   const newArr = mediaComments.map(item => ({
     id: item.id, 
     name: item.name, 
   }))
 }
 
-getIdName(); 
+updateArr(); 
 
 /* Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false. */
 
-function addIsInvalid() {
-  const validArr = mediaComments.map(item => {
-    if (item.body.length > 180) {
-      item.isInvalid = true; 
-    } else {
-      item.isInvalid = false; 
-    }
+function addProperty() {
+  const validArr = mediaComments.forEach(item => {
+    item.body.length > 180 ? item.isInvalid = true : item.isInvalid = false; 
   })
 }
 
-addIsInvalid();
+addProperty();
 
 // Уровень 3:
 
@@ -92,9 +85,8 @@ getMailsByReduce();
 
 //12. Почитать про методы toString(), join() и перебрав массив с задания №11, привести его к строке.
 
-function convertToString() {
-  const mails = getMails(); 
-  return mails.join("\n").toString(); 
+function convertToString() { 
+  return mailsArr.join("\n").toString(); 
 }
 
 convertToString(); 
