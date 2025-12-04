@@ -84,7 +84,7 @@ books.push(
         year: 'не знаю', 
         colour: 'черный', 
         genre: 'трагедия', 
-    }
+    }, 
 ); 
 
 console.log(books);
