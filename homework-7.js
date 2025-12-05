@@ -37,9 +37,10 @@ includeMailsCom();
 /* Перебрать массив таким образом, что бы пользователи с id меньше или равно 5 имели postId: 2, а те, у кого id больше 5, имели postId: 1*/
 
 function changePostId() {
-  mediaComments.forEach((item) => {
-    item.id <= 5 ? item.postId = 2 : item.postId = 1; 
-  });
+  mediaComments.map((item) => ({
+    ...item, 
+    postId: item.id <= 5 ? 2 : 1
+  }));
 }
 
 changePostId();
