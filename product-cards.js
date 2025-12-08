@@ -1,4 +1,4 @@
-const productCardsArray = [
+export const productCardsArray = [
     {
         purpose: 'для нормальной кожи', 
         name: 'Увлажняющий мусс',
@@ -53,10 +53,11 @@ productCardsArray.forEach(productCard => {
     const productCardClone = productTemplate.content.cloneNode(true); 
     productCardClone.querySelector('.purpose').textContent = productCard.purpose;
     productCardClone.querySelector('.name').textContent = productCard.name;
-    productCardClone.querySelector('.description').textContent = productCard.description;
-    productCardClone.querySelector('.compoundone').textContent = productCard.compoundone;
-    productCardClone.querySelector('.compoundtwo').textContent = productCard.compoundtwo;
-    productCardClone.querySelector('.compoundthree').textContent = productCard.compoundthree;
-    productCardClone.querySelector('.cost').textContent = `${productCard.cost} ₽`;
+    productCardClone.querySelector('.description').textContent = productCardsArray.description;
+    productCardClone.querySelector('.compoundone').textContent = productCardsArray.compoundone;
+    productCardClone.querySelector('.compoundtwo').textContent = productCardsArray.compoundtwo;
+    productCardClone.querySelector('.compoundthree').textContent = productCardsArray.compoundthree;
+    productCardClone.querySelector('.cost').textContent = `${productCardsArray.cost} ₽`;
     productsList.appendChild(productCardClone); 
 })
+
