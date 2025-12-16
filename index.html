@@ -17,55 +17,34 @@
     <div class="container">
         <div class="wrap">
             <h1 class="main-title">Выбери свой продукт</h1>
-            <ul class="button-list">
-                <li>
-                    <button id="change-first-card-color-btn" class="btn">Сменить цвет первой карточки</button>
-                </li>
-                <li>
-                    <button id="change-cards-color-btn" class="btn">Сменить все цвета</button>
-                </li>
-                <li>
-                    <button id="open-google" class="btn">Перейти в гугл</button>
-                </li>
-                <li>
-                    <button id="output-console-log" class="btn">Вывод консоль лог</button>
-                </li>
-                <li>
-                    <button id="change-btn-color" class="btn" class="bg-yellow">Поменять цвет кнопки</button>
-                </li>
-            </ul>
 
             <ul id="productsList"></ul>
+            <div class="bg-image"></div>
+            <template id="product">
+                <div class="card-container">
+                    <li>
+                        <img src="" alt="" width="290" height="245" class="cardImg">
+                        <span class="skinType"></span>
+                        <h3 class="name"></h3>
+                        <p class="description"></p>
+                        <span>Состав:</span>
+                        <ul class="product-compound">
+                            <li class="compound product-compound-item"></li>
+                        </ul>
+                        <div class="product-price-container">
+                            <span class="product-price-label">Цена</span>
+                            <span class="cost"></span>
+                        </div>
+                    </li>
+                </div>
+            </template>
 
-            <ul class="product-wrapper">
-                <div class="bg-image"></div>
-                <template id="product">
-                    <div class="card-container">
-                        <li>
-                            <img src="" alt="" width="290" height="245" class="cardImg">
-                            <span class="skinType"></span>
-                            <h3 class="name"></h3>
-                            <p class="description"></p>
-                            <span>Состав:</span>
-                            <ul class="product-compound">
-                                <li class="compound product-compound-item"></li>
-                            </ul>
-                            <div class="product-price-container">
-                                <span class="product-price-label">Цена</span>
-                                <span class="cost"></span>
-                            </div>
-                        </li>
-                    </div>
-                </template>
 
-            </ul>
 
         </div>
 
     </div>
-
-    <script type="module" src="./product-cards.js"></script>
-    <script src="./homework-8.js"></script>
+    <script src="./homework-8.js" type="module"></script>
 </body>
 
 </html>
