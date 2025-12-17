@@ -20,23 +20,22 @@ function getProductDesc() {
 getProductDesc(); 
 
 /* Реализовать функцию, которая при старте нашей страницы выводит сообщение с текстом, мол "Сколько карточек отобразить? От 1 до 5" и в зависимости от результата - будет выводить это количество. Должна быть защита от введенных других значений (имеется ввиду проверка if). */
-
+                            
 function getCardsQuantity() {
     const cardsInput = prompt('Сколько карточек отобразить ?');
-    const cardCount = cardsInput;
+    const cardCount = Number(cardsInput);
 
     if (!cardCount || cardCount < 1 || cardCount > 5) {
-            alert('Ошибка! Введите число от 1 до 5'); 
-            return getCardsQuantity(); 
-        }
-    return cardCount; 
+        alert('Ошибка! Введите число от 1 до 5');
+        return getCardsQuantity();
+    }
+    return cardCount;
 }
-
 
 const productsList = document.getElementById('productsList');
 const productTemplate = document.getElementById('product'); 
 
-function getAllCards(count) {
+function displayCard(count) {
     productsList.innerHTML = ""; 
     const newProductCards = productCardsArray.slice(0, count); 
 
@@ -55,5 +54,5 @@ function getAllCards(count) {
 
 document.addEventListener("DOMContentLoaded", () => {
     const count = getCardsQuantity(); 
-    getAllCards(count);
+    displayCard(count);
 });
