@@ -5,47 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
     <footer>
-        <div class="container">
-            <div class="wrapper">
+        <div class="wrapper">
+            <div class="container">
                 <div class="social__media">
-                    <h1 class="product-cards">Product Cards</h1>
+                    <p class="product-cards">Product Cards</p>
                     <p class="desc">У нас самые лучшие продукты для кожи!</p>
                     <ul class="media__links">
                         <li class="media__links-item">
-                            <a href="#" class="telegram">
-                                <img src="" alt="telegram-link">
+                            <a href="#">
+                                <img src="./img/TG.png" alt="telegram" class="social-icon">
                             </a>
                         </li>
                         <li class="media__links-item">
-                            <a href="#" class="vk">
-                                <img src="" alt="vk-link">
+                            <a href="#">
+                                <img src="./img/VK.png" alt="vk" class="social-icon">
                             </a>
                         </li>
                     </ul>
                 </div>
-                <form class="products-form">
-                    <p>Подпишись на наши акции:</p>
-                    <div class="inputs">
-                        <input type="email" name="email" id="customer-email">
-                        <button></button>
-                    </div>
-                </form>
+                <div class="middle__block">
+                    <form class="products-form">
+                        <label class="follow__product" for="">Подпишись на наши акции:</label>
+                        <div class="follower-email">
+                            <input type="email" name="email" id="customer-email" required placeholder="Введи Email...">
+                            <div class="vertical-line"></div>
+                            <button class="form-btn">Подписаться</button>
+                        </div>
+                    </form>
+                </div>
                 <div class="footer-links">
-                    <p></p>
-                    <ul class="links">
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">Магазин</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
+                    <nav>
+                        <label for="">Быстрые ссылки</label>
+                        <ul class="links">
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">Магазин</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-bottom">
+                    <hr>
+                    <span>© www.product-cards.com All rights reserved</span>
                 </div>
             </div>
         </div>
     </footer>
+    <script src="./footer.js"></script>
 </body>
 
 </html>
