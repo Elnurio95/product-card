@@ -36,6 +36,7 @@
 .media__links {
     display: flex;
     gap: 30px;
+    list-style: none;
 }
 
 .media__links-item {
@@ -81,7 +82,7 @@
     border: none;
     padding: 36px;
     flex-grow: 1;
-    border-radius: 10px;    
+    border-radius: 10px;
     outline: none;
 }
 
@@ -109,13 +110,15 @@
     padding-bottom: 42px;
 }
 
-a {
-    text-decoration: none;
+
+
+.links-item {
+    padding-bottom: 17px;
+    list-style: none;
 }
 
-li {
-     list-style: none;
-     padding-bottom: 17px;
+.nav-links {
+    text-decoration: none;
 }
 
 .links {
@@ -130,13 +133,13 @@ li {
 }
 
 hr {
-  width: 66px;
-  border: none;
-  border-top: 1px solid #777;
-  margin: 0 auto 12px;
+    width: 66px;
+    border: none;
+    border-top: 1px solid #777;
+    margin: 0 auto 12px;
 }
 
-.register {
+.modal-btn {
     width: 477px;
     height: 50px;
     border-radius: 10px;
@@ -157,17 +160,65 @@ hr {
     padding: 24px;
     border-radius: 8px;
     min-width: 300px;
-    z-index: 10;
 }
+
 .modal-showed {
     display: block;
 }
 
 .overlay {
-    display: none;
-    position: fixed;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 5;
+    display: none;
+    position: fixed;
+    background: rgb(45, 45, 45);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-showed {
+    display: flex;
+}
+
+.modal-home {
+    background: #FFFFFF;
+    padding: 24px;
+    width: 477px;
+    padding: 24px 28px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.registration {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.btn-registration {
+    box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
+    transition: 0.5s;
+    border: none;
+    border-radius: 2px;
+    width: 100px;
+    height: 40px;
+    background: blue;
+    color: white;
+}
+
+.btn-registration:hover {
+    transform: translate(0, -3px);
+    box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
 }

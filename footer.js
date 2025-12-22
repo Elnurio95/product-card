@@ -1,9 +1,9 @@
 const productsForm = document.querySelector('.products-form'); 
 const customerEmail = document.querySelector('#customer-email'); 
 const formBtn = document.querySelector('.formBtn'); 
-const register = document.querySelector('.register'); 
-const modal = document.querySelector('.modal'); 
-const modalShowed = document.querySelector('.modal-showed'); 
+const openModal = document.querySelector('.modal-btn'); 
+const closeModal = document.querySelector('.modal-close');  
+const overlay = document.querySelector('.overlay'); 
 
 productsForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
@@ -16,6 +16,16 @@ productsForm.addEventListener('submit', function(event) {
     }); 
 }); 
 
-register.addEventListener('click', ()=> {
-    modal.classList.add('modal-showed');   
+openModal.addEventListener(('click'), ()=> {
+    overlay.classList.add("modal-showed");
 })
+
+closeModal.addEventListener(('click'), ()=> {
+    overlay.classList.remove("modal-shwed");
+})
+
+overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+        overlay.classList.remove('modal-showed');
+    }
+});
