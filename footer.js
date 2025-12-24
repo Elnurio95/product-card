@@ -7,8 +7,6 @@ const overlay = document.querySelector('.overlay');
 const btnAuth = document.querySelector('.modal-auth');
 const modalForm = document.querySelector('.modal-form');
 const modalInput = document.querySelector('.modal-form-input');
-const password = document.querySelector('.password').value; 
-const repeatPassword = document.querySelector('.repeat-password').value;
 
 productsForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
@@ -45,13 +43,16 @@ btnAuth.addEventListener('click', (event) => {
         return; 
     }
 
-    if (password !== repeatPassword) {
+    const formData = new FormData(modalForm); 
+    const data = Object.fromEntries(formData.entries()); 
+
+    const password = document.querySelector('.password').value; 
+    const repeatPassword = document.querySelector('.repeat-password').value;
+
+    if (data.password !== data.repeatPassword) {
         alert('Пароли не совпадают'); 
         return; 
     }
-
-    const formData = new FormData(modalForm); 
-    const data = Object.fromEntries(formData.entries()); 
 
     user = {
         ...data, 
