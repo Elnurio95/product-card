@@ -13,6 +13,43 @@
 </head>
 
 <body>
+    <div>
+        <button class="modal-btn">Регистрация</button>
+        <div class="overlay">
+            <div class="modal-home">
+                <div>
+                    <h2 class="registration">АВТОРИЗАЦИЯ</h2>
+                    <button class="modal-close">X</button>
+                </div>
+                <form class="modal-form">
+                    <label class="modal-form-info"> ИМЯ:
+                        <input type="text" name="name" class="modal-form-input" required placeholder="Имя">
+                    </label>
+                    <label class="modal-form-info"> ФАМИЛИЯ:
+                        <input type="text" name="surame" class="modal-form-input" required placeholder="Фамилия">
+                    </label>
+                    <label class="modal-form-info"> ДАТА РОЖДЕНИЯ:
+                        <input type="date" required class="modal-date" class="modal-form-input" required>
+                    </label>
+                    <label class="modal-form-info"> E-MAIL:
+                        <input type="email" name="mail" class="modal-form-input" required placeholder="e-mail">
+                    </label>
+                    <label class="modal-form-info"> ЛОГИН:
+                        <input type="text" name="login" class="modal-form-input" required placeholder="Логин">
+                    </label>
+                    <label class="modal-form-info">ПАРОЛЬ:
+                        <input type="password" name="password" class="modal-form-input password" required
+                            placeholder="Пароль">
+                    </label>
+                    <label class="modal-form-info">ПОВТОРИТЕ ПАРОЛЬ:
+                        <input type="password" name="repeat-password" class="modal-form-input repeat-password" required
+                            placeholder="Пароль">
+                    </label>
+                    <button class="modal-auth">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="wrapper">
             <div class="container">
@@ -59,15 +96,6 @@
             </div>
         </div>
     </footer>
-    <div>
-        <button class="modal-btn">Регистрация</button>
-        <div class="overlay">
-            <div class="modal-home">
-                <button class="modal-close">X</button>
-                <h2 class="registration">РЕГИСТРАЦИЯ</h2>
-            </div>
-        </div>
-    </div>
     <script src="./footer.js" type="module"></script>
 </body>
 

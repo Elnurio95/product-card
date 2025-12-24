@@ -184,7 +184,8 @@ hr {
 .modal-home {
     background: #FFFFFF;
     padding: 24px;
-    width: 477px;
+    width: 600px;
+    height: 500px;
     padding: 24px 28px;
     border-radius: 12px;
     position: relative;
@@ -207,18 +208,32 @@ hr {
     color: #000000;
 }
 
-.btn-registration {
-    box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
-    transition: 0.5s;
-    border: none;
-    border-radius: 2px;
-    width: 100px;
-    height: 40px;
-    background: blue;
-    color: white;
+.modal-form {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.btn-registration:hover {
-    transform: translate(0, -3px);
-    box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
+.modal-form-info {
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.modal-form-input {
+    margin-left: 10px;
+    padding: 5px;
+    color: #000000;
+}
+
+.modal-date {
+    padding: 5px;
+    color: #000000;
+}
+
+.modal-auth {
+    padding: 10px;
+    color: #000000;
+    background-color: #FFFFFF;
+    border: 1 solid #777;
+    cursor: pointer;
+    margin-top: 20px;
 }

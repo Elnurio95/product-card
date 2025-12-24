@@ -4,6 +4,11 @@ const formBtn = document.querySelector('.formBtn');
 const openModal = document.querySelector('.modal-btn'); 
 const closeModal = document.querySelector('.modal-close');  
 const overlay = document.querySelector('.overlay'); 
+const btnAuth = document.querySelector('.modal-auth');
+const modalForm = document.querySelector('.modal-form');
+const modalInput = document.querySelector('.modal-form-input');
+const password = document.querySelector('.password').value; 
+const repeatPassword = document.querySelector('.repeat-password').value;
 
 productsForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
@@ -21,11 +26,43 @@ openModal.addEventListener(('click'), ()=> {
 })
 
 closeModal.addEventListener(('click'), ()=> {
-    overlay.classList.remove("modal-shwed");
+    overlay.classList.remove("modal-showed");
 })
 
 overlay.addEventListener('click', (e) => {
     if (e.target === overlay) {
         overlay.classList.remove('modal-showed');
     }
+});
+
+let user = null; 
+
+btnAuth.addEventListener('click', (event) => {
+    event.preventDefault(); 
+
+    if (!modalForm.checkValidity()) {
+        alert("Форма заполнена неверно");
+        return; 
+    }
+
+    if (password !== repeatPassword) {
+        alert('Пароли не совпадают'); 
+        return; 
+    }
+
+    const formData = new FormData(modalForm); 
+    const data = Object.fromEntries(formData.entries()); 
+    
+    // if (data.password !== data.repeatPassword) {
+    //     alert("Пароли не совпадают"); 
+    //     return; 
+    // }
+
+    user = {
+        ...data, 
+        createdOn: new Date(), 
+    }
+
+    console.log("Зарегистрирован пользователь: ", user); 
+    overlay.classList.remove("modal-showed"); 
 });
