@@ -45,7 +45,7 @@ btnAuth.addEventListener('click', (event) => {
 
     const formData = new FormData(modalForm); 
     const data = Object.fromEntries(formData.entries()); 
-
+    
     if (data.password !== data.repeatPassword) {
         alert('Пароли не совпадают'); 
         return; 
