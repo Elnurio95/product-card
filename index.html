@@ -4,47 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Card</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <title>Document</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="wrap">
-            <h1 class="main-title">Выбери свой продукт</h1>
-
-            <ul id="productsList"></ul>
-            <div class="bg-image"></div>
-            <template id="product">
-                <div class="card-container">
-                    <li>
-                        <img src="" alt="" width="290" height="245" class="cardImg">
-                        <span class="skinType"></span>
-                        <h3 class="name"></h3>
-                        <p class="description"></p>
-                        <span>Состав:</span>
-                        <ul class="product-compound">
-                            <li class="compound product-compound-item"></li>
-                        </ul>
-                        <div class="product-price-container">
-                            <span class="product-price-label">Цена</span>
-                            <span class="cost"></span>
-                        </div>
-                    </li>
+    <div>
+        <button class="modal-btn">Регистрация</button>
+        <div class="overlay">
+            <div class="modal-home">
+                <div>
+                    <h2 class="registration">АВТОРИЗАЦИЯ</h2>
+                    <button class="modal-close">X</button>
                 </div>
-            </template>
-
-
-
+                <form class="modal-form">
+                    <label class="modal-form-info"> ИМЯ:
+                        <input type="text" name="name" class="modal-form-input" required placeholder="Имя">
+                    </label>
+                    <label class="modal-form-info"> ФАМИЛИЯ:
+                        <input type="text" name="surname" class="modal-form-input" required placeholder="Фамилия">
+                    </label>
+                    <label class="modal-form-info"> ДАТА РОЖДЕНИЯ:
+                        <input type="date" required class="modal-form-input modal-date" name="birthDate">
+                    </label>
+                    <label class="modal-form-info"> E-MAIL:
+                        <input type="email" name="mail" class="modal-form-input" required placeholder="e-mail">
+                    </label>
+                    <label class="modal-form-info"> ЛОГИН:
+                        <input type="text" name="login" class="modal-form-input" required placeholder="Логин">
+                    </label>
+                    <label class="modal-form-info">ПАРОЛЬ:
+                        <input type="password" name="password" class="modal-form-input password" required
+                            placeholder="Пароль">
+                    </label>
+                    <label class="modal-form-info">ПОВТОРИТЕ ПАРОЛЬ:
+                        <input type="password" name="repeatPassword" class="modal-form-input repeat-password" required
+                            placeholder="Пароль">
+                    </label>
+                    <button class="modal-auth">Зарегистрироваться</button>
+                </form>
+            </div>
         </div>
-
     </div>
-    <script src="./homework-8.js" type="module"></script>
+    <footer>
+        <div class="wrapper">
+            <div class="container">
+                <div class="social__media">
+                    <p class="product-cards">Product Cards</p>
+                    <p class="desc">У нас самые лучшие продукты для кожи!</p>
+                    <ul class="media__links">
+                        <li class="media__links-item">
+                            <a href="#">
+                                <img src="./img/icon-tg.svg" alt="telegram" class="social-icon">
+                            </a>
+                        </li>
+                        <li class="media__links-item">
+                            <a href="#">
+                                <img src="./img/icon-vk.svg" alt="vk" class="social-icon">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="middle__block">
+                    <form class="products-form">
+                        <label class="follow__product" for="">Подпишись на наши акции:</label>
+                        <div class="follower-email">
+                            <input type="email" name="email" id="customer-email" required placeholder="Введи Email...">
+                            <div class="vertical-line"></div>
+                            <button class="form-btn">Подписаться</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="footer-links">
+                    <nav>
+                        <label for="">Быстрые ссылки</label>
+                        <ul class="links">
+                            <li class="links-item">
+                                <a href="#" class="nav-links">Главная</a>
+                            </li>
+                            <li class="links-item">
+                                <a href="#" class="nav-links">Магазин</a>
+                            </li>
+                            <li class="links-item">
+                                <a href="#" class="nav-links">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-bottom">
+                    <hr>
+                    <span>© www.product-cards.com All rights reserved</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./footer.js" type="module"></script>
 </body>
 
 </html>
