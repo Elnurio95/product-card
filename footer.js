@@ -1,12 +1,16 @@
+import { Modal } from './Modal.js';
+import { Form } from './Form.js';
+
 const productsForm = document.querySelector('.products-form'); 
 const customerEmail = document.querySelector('#customer-email'); 
-const formBtn = document.querySelector('.formBtn'); 
 const openModal = document.querySelector('.modal-btn'); 
 const closeModal = document.querySelector('.modal-close');  
 const overlay = document.querySelector('.overlay'); 
 const btnAuth = document.querySelector('.modal-auth');
 const modalForm = document.querySelector('.modal-form');
-const modalInput = document.querySelector('.modal-form-input');
+
+const authUser = new Modal('auth-user'); 
+const form = new Form('modalId'); 
 
 productsForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
@@ -20,11 +24,11 @@ productsForm.addEventListener('submit', function(event) {
 }); 
 
 openModal.addEventListener(('click'), ()=> {
-    overlay.classList.add("modal-showed");
+    authUser.open();
 })
 
 closeModal.addEventListener(('click'), ()=> {
-    overlay.classList.remove("modal-showed");
+    overlay.close();
 })
 
 overlay.addEventListener('click', (e) => {
@@ -42,9 +46,7 @@ btnAuth.addEventListener('click', (event) => {
         alert("Форма заполнена неверно");
         return; 
     }
-
-    const formData = new FormData(modalForm); 
-    const data = Object.fromEntries(formData.entries()); 
+    const data = form.getValues()  
     
     if (data.password !== data.repeatPassword) {
         alert('Пароли не совпадают'); 
@@ -59,3 +61,4 @@ btnAuth.addEventListener('click', (event) => {
     console.log("Зарегистрирован пользователь: ", user); 
     overlay.classList.remove("modal-showed"); 
 });
+ 
