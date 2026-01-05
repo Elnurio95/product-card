@@ -5,11 +5,10 @@ const productsForm = document.querySelector('.products-form');
 const customerEmail = document.querySelector('#customer-email'); 
 const openModal = document.querySelector('.modal-btn'); 
 const closeModal = document.querySelector('.modal-close');  
-const overlay = document.querySelector('.overlay'); 
 const btnAuth = document.querySelector('.modal-auth');
 const modalForm = document.querySelector('.modal-form');
 
-const authUser = new Modal('auth-user'); 
+const authUser = new Modal('auth-user', '.overlay'); 
 const form = new Form('modalId'); 
 
 productsForm.addEventListener('submit', function(event) {
@@ -30,12 +29,6 @@ openModal.addEventListener(('click'), ()=> {
 closeModal.addEventListener(('click'), ()=> {
     overlay.close();
 })
-
-overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) {
-        overlay.classList.remove('modal-showed');
-    }
-});
 
 let user = null; 
 

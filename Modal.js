@@ -1,25 +1,30 @@
 export class Modal {
-    constructor(modalId) {
+
+    constructor(modalId, overlay) {
         this.modal = document.getElementById(modalId); 
-        this.markClose();
+        this.overlay = document.querySelector(overlay);
+        this.initClose();
     }
 
     open() {
-        this.modal.classList.add('modal-showed'); 
+        this.modal.classList.add('modal-showed');
+        this.overlay.classList.add('modal-showed');
     }
 
     close() {
         this.modal.classList.remove('modal-showed');
+        this.overlay.classList.remove('modal-showed');
     }
 
-    controleOpen() {
+    isOpen() {
         return this.modal.classList.contains('modal-showed');
     }
 
-    markClose() {
+    initClose() {
         const closeBtn = document.querySelector('.modal-close'); 
         closeBtn.addEventListener('click', () => {
             this.close();
         })
     }
+
 }

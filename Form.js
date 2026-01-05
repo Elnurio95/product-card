@@ -1,18 +1,20 @@
 export class Form {
+
     constructor(modalId) {
-        this.modalId = document.getElementById(modalId);
+        this.modal = document.getElementById(modalId);
     }
 
     getValues() {
-        const formData = new FormData(this.modalId); 
+        const formData = new FormData(this.modal); 
         return data = Object.fromEntries(formData.entries()); 
     }
 
     isValid() {
-        return this.modalId.checkValidity(); 
+        return this.modal.checkValidity(); 
     }
 
     reset() {
-        this.modalId.reset(); 
+        this.modal.reset(); 
     }
+
 }
