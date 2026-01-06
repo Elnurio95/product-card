@@ -1,8 +1,8 @@
 export class Modal {
 
-    constructor(modalId, overlay) {
+    constructor(modalId) {
         this.modal = document.getElementById(modalId); 
-        this.overlay = document.querySelector(overlay);
+        this.overlay = document.querySelector('.overlay');
         this.initClose();
     }
 
