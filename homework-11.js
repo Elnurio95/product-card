@@ -1,8 +1,12 @@
-import { Cafe } from "./Cafe";
-import { Drinks } from "./Drinks"; 
-import { Coffee } from "./Coffee"; 
-import { Limonad } from "./Limonad"; 
-import { Tea } from "./Tea"; 
-import { Mojito } from "./Mojito"; 
-import { MilkShake } from "./MilkShake";
+import { Cafe } from "./Cafe.js";
+import { Drinks } from "./Drinks.js";
+
+const infoCafe = new Cafe("My Bakery", "Москва"); 
+infoCafe.getInfoCafe(); 
+
+const drinkOrder = new Drinks("Флетвайт", "350 мл", "280 рублей", 80); 
+
+drinkOrder.getInfo();
+
+infoCafe.makeOrder(drinkOrder);
 

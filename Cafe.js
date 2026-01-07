@@ -6,12 +6,11 @@ export class Cafe {
     }
 
     getInfoCafe() {
-        console.log(this.cafeName, this.location); 
+        console.log(`Моё заведение называется ${this.cafeName} и находится в городе ${this.location}`); 
     }
 
-    makeOrder() {
-        console.log(this.Drinks.giveDrink()); 
+    makeOrder(drink) {
+        drink.giveDrink();
     }
 
 }
-

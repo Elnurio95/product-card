@@ -2,31 +2,30 @@ export class Drinks {
 
     #temperature; 
 
-    constructor(name, volume, price) {
+    constructor(name, volume, price, temperature) {
         this.name = name; 
         this.volume =volume; 
         this.price = price; 
-        this.temperature = temperature; 
+        this.#temperature = temperature; 
     }
 
     getInfo() {
-        console.log(this.name, this.volume, this.price, this.temperature); 
+        console.log(`Напиток: ${this.name}, объем напитка ${this.volume}, цена напитка ${this.price}`); 
     }
 
     getTemperature() {
         return this.#temperature; 
     }
 
-    setTemperature() {
-        const drinkTemp = this.temperature; 
-        return drinkTemp; 
+    setTemperature(temp) {
+        this.#temperature = temp;  
     }
 
     #preparePrivateDrink() {
-        console.log(this.name); 
+        return this.name;  
     }
 
     giveDrink() {
-        console.log(this.name); 
+        this.getInfo(); 
     }
 }
