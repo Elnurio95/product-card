@@ -6,7 +6,7 @@ import { MilkShake } from "./MilkShake.js";
 import { Mojito } from "./Mojito.js";
 
 const infoCafe = new Cafe("My Bakery", "Москва"); 
-infoCafe.getInfoCafe(); 
+infoCafe.getCafeInfo(); 
 
 const drinkOrder = new Drink("Флетвайт", "350 мл", "280 рублей", 80); 
 
