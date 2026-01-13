@@ -1,13 +1,13 @@
-export class Coffee {
+import { Drink } from "./Drink.js";
 
-    constructor(country, roasting) {
-        this.country = country; 
-        this.roasting = roasting; 
+export class Coffee extends Drink {
+    constructor (name, volume, price, beans) {
+        super(name, volume, price); 
+        this.beans = beans; 
     }
 
-    determine() {
-        console.log(`${this.country} - кофе ${this.roasting} обжарки`);
+    getBeansType() {
+        console.log(`Эспрессо обычно из зёрен ${this.beans} темной обжарки`); 
     }
-    
 }
 
