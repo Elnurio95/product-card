@@ -6,7 +6,7 @@ export class Cafe {
     }
 
     getCafeInfo() {
-        console.log(`Моё заведение называется ${this.cafeName} и находится в городе ${this.location}`); 
+        console.log(`Моё заведение называется ${ this.cafeName } и находится в городе ${ this.location }`); 
     }
 
     makeOrder(drink) {
