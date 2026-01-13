@@ -1,6 +1,4 @@
-import { mediaComments } from "./comments";
-
-
+// import { mediaComments } from "./comments";
 //Уровень 1
 /*Создать массив чисел от 1 до 10. Отфильтровать его таким образом, что бы мы получил массив чисел, начиная с 5. */
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
@@ -27,68 +25,68 @@ reverseArray(array);
 
 /* Вывести в консоль массив тех комментариев, почта пользователей которых содержит ".com" */
 
-function includeMailsCom() {
-    const result = mediaComments.filter((item) => item.email.includes('.com')); 
-    return result; 
-}
+// function includeMailsCom() {
+//     const result = mediaComments.filter((item) => item.email.includes('.com')); 
+//     return result; 
+// }
 
-includeMailsCom(); 
+// includeMailsCom(); 
 
 /* Перебрать массив таким образом, что бы пользователи с id меньше или равно 5 имели postId: 2, а те, у кого id больше 5, имели postId: 1*/
 
-function changePostId() {
-  mediaComments.map((item) => ({
-    ...item, 
-    postId: item.id <= 5 ? 2 : 1
-  }));
-}
+// function changePostId() {
+//   mediaComments.map((item) => ({
+//     ...item, 
+//     postId: item.id <= 5 ? 2 : 1
+//   }));
+// }
 
-changePostId();
+// changePostId();
 
 
 /* Перебрать массив, что бы объекты состояли только из айди и имени */
-function updateArr() {
-  const newArr = mediaComments.map(item => ({
-    id: item.id, 
-    name: item.name, 
-  }))
-}
+// function updateArr() {
+//   const newArr = mediaComments.map(item => ({
+//     id: item.id, 
+//     name: item.name, 
+//   }))
+// }
 
-updateArr(); 
+// updateArr(); 
 
 /* Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false. */
 
-function addProperty() {
-  const validArr = mediaComments.forEach(item => {
-    item.body.length > 180 ? item.isInvalid = true : item.isInvalid = false; 
-  })
-}
+// function addProperty() {
+//   const validArr = mediaComments.forEach(item => {
+//     item.body.length > 180 ? item.isInvalid = true : item.isInvalid = false; 
+//   })
+// }
 
-addProperty();
+// addProperty();
 
 // Уровень 3:
 
 //11. Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть тоже самое с помощью метода map
 
-function getMails() {
-  const mailsArr = mediaComments.map(item => item.email);  
-  return mailsArr; 
-}
+// function getMails() {
+//   const mailsArr = mediaComments.map(item => item.email);  
+//   return mailsArr; 
+// }
 
-getMails(); 
+// getMails(); 
 
-const getMailsByReduce = () =>
-  mediaComments.reduce((acc, currentValue) => [...acc, currentValue.email], []);
+// const getMailsByReduce = () =>
+//   mediaComments.reduce((acc, currentValue) => [...acc, currentValue.email], []);
 
-getMailsByReduce(); 
+// getMailsByReduce(); 
 
 
 
 //12. Почитать про методы toString(), join() и перебрав массив с задания №11, привести его к строке.
 
-function convertToString() { 
-  return mailsArr.join("\n").toString(); 
-}
+// function convertToString() { 
+//   return mailsArr.join("\n").toString(); 
+// }
 
-convertToString(); 
+// convertToString(); 
 
