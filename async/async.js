@@ -1,81 +1,118 @@
-const loader = document.getElementById('loader'); 
-const getCards = document.getElementById('get-cards'); 
+const loader = document.getElementById('loader');
+const getCards = document.getElementById('get-cards');
 const deleteAllCards = document.getElementById('delete-all-cards');
-const deleteCard = document.getElementById('delete-card'); 
+const deleteCard = document.getElementById('delete-card');
 const userCards = document.getElementById('user-cards');
-const userTemplate = document.getElementById('user-template');  
+const userTemplate = document.getElementById('user-template');
+const cardsLoadBtn = document.getElementById('cards-btn');
+const buttons = document.querySelector('.buttons');
 
-function checkLocalStorage(data) {
-  if (!data) {
-    loader.textContent = 'Данные загружаются...';
-  } else {
-    loader.textContent = '';
-  }
+const STORAGE_KEY = 'users';
+
+function showLoader(text) {
+  loader.textContent = text;
 }
 
-async function fetchData() {
-  try {
-    loader.textContent = 'Данные загружаются...';
-
-    const response = await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        fetch('/async/users.json')
-          .then(res => {
-            resolve(res);
-          })
-          .catch(err => reject(err));
-      }, 1000);
-    });
-
-    const data = await response.json();
-    localStorage.setItem('info', JSON.stringify(data));
-
-    checkLocalStorage(data);
-    return data;
-
-  } catch (error) {
-    console.error('Ошибка загрузки данных:', error);
-    loader.textContent = 'Ошибка загрузки данных';
-  } finally {
-    console.log('Код выполнен');
-  }
+function clearLoader() {
+  loader.textContent = '';
 }
 
-async function getUser() {
-  const data = await fetchData();
-  console.log(data);
-  return data;
+function getFromStorage() {
+  return JSON.parse(localStorage.getItem(STORAGE_KEY));
 }
 
-const storedData = JSON.parse(localStorage.getItem('info'));
-checkLocalStorage(storedData);
+function setToStorage(data) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
 
-async function fillUserCards(users) {
-  userCards.innerHTML = ""; 
-  
-  users.forEach(userCard => {
-    const userCardClone = userTemplate.content.cloneNode(true); 
-    userCardClone.querySelector('.id').textContent = userCard.id;
-    userCardClone.querySelector('.name').textContent = userCard.name;
-    userCardClone.querySelector('.surname').textContent = userCard.surname;
-    userCardClone.querySelector('.email').textContent = userCard.email; 
-    userCardClone.querySelector('.age').textContent = userCard.age;
-    userCardClone.querySelector('.height').textContent = userCard.height;
-    userCards.appendChild(userCardClone); 
+function renderUsers(users) {
+  userCards.innerHTML = '';
+
+  users.forEach(user => {
+    const clone = userTemplate.content.cloneNode(true);
+    clone.querySelector('.id').textContent = `User ID: ${user.id}`;
+    clone.querySelector('.name').textContent = `Name: ${user.name}`;
+    clone.querySelector('.surname').textContent = `Surname: ${user.surname}`;
+    clone.querySelector('.email').textContent = `E-mail: ${user.email}`;
+    clone.querySelector('.age').textContent = `Age: ${user.age}`;
+    clone.querySelector('.height').textContent = `Height: ${user.height}`;
+    userCards.appendChild(clone);
   });
 }
 
+async function fetchUsersFromServer() {
+  const response = await fetch('/async/users.json');
+  const data = await response.json();
+  return data.users;
+}
+
+function loadUsers() {
+  showLoader('Данные загружаются...');
+
+  return new Promise(async (resolve) => {
+    setTimeout(async () => {
+      let users = getFromStorage();
+
+      if (users && users.length) {
+        resolve(users);
+      } else {
+        users = await fetchUsersFromServer();
+        setToStorage(users);
+        resolve(users);
+      }
+    }, 1000);
+  });
+}
+
+cardsLoadBtn.addEventListener('click', async () => {
+  cardsLoadBtn.style.display = 'none';
+  buttons.style.display = 'flex';
+  getCards.style.display = 'block';
+
+  showLoader('Данные загружаются...');
+
+  const users = await loadUsers();
+  renderUsers(users);
+
+  clearLoader();
+});
+
 getCards.addEventListener('click', async () => {
-  let users = JSON.parse(localStorage.getItem('info')); 
-  return fillUserCards(users);
+  let users = getFromStorage();
+
+  if (!users || !users.length) {
+    showLoader('Данные загружаются...');
+    users = await loadUsers();
+    clearLoader();
+  }
+
+  renderUsers(users);
 });
 
 deleteAllCards.addEventListener('click', () => {
-  localStorage.clear();
-  loader.textContent = 'Карточки удалены';
+  setTimeout(() => {
+    localStorage.removeItem(STORAGE_KEY);
+    userCards.innerHTML = '';
+    showLoader('Данные удалены');
+  }, 500);
 });
 
 deleteCard.addEventListener('click', () => {
-  localStorage.removeItem('info');
-  loader.textContent = 'Карточка удалена';
+  let users = getFromStorage();
+
+  if (!users || !users.length) {
+    localStorage.removeItem(STORAGE_KEY);
+    userCards.innerHTML = '';
+    return;
+  }
+
+  users = users.slice(1);
+
+  if (!users.length) {
+    localStorage.removeItem(STORAGE_KEY);
+  } else {
+    setToStorage(users);
+  }
+
+  renderUsers(users);
 });

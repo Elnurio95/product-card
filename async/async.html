@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <div>
+    <button class="cards-btn" id="cards-btn">Получить карточки пользователей</button>
+    <div class="load">
         <h1 id="loader"></h1>
     </div>
     <div class="buttons">
@@ -27,17 +28,18 @@
     <ul id="user-cards"></ul>
 
     <template id="user-template">
-        <div class="container">
-            <li class="id"></li>
-            <li class="name"></li>
-            <li class="surname"></li>
-            <li class="email"></li>
-            <li class="age"></li>
-            <li class="height"></li>
-        </div>
+        <ul class="container">
+            <li class="id user-list">User ID: </li>
+            <li class="name user-list">Name: </li>
+            <li class="surname user-list">Surname: </li>
+            <li class="email user-list">E-mail: </li>
+            <li class="age user-list">Age: </li>
+            <li class="height user-list">Height: </li>
+            </li>
     </template>
 
-    <script src="/async/async.js"></script>
+
+    <script src="/async/async.js" defer></script>
 
 </body>
 

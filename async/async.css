@@ -10,7 +10,25 @@ body {
     min-height: 100vh;
 }
 
-#loader {
+#user-cards {
+    display: flex;
+    font-size: 30px;
+    gap: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.user-list {
+    list-style-type: none;
+}
+
+.loader {
+    display: none;
+}
+
+.load {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,14 +36,37 @@ body {
 }
 
 .btn {
+    display: block;
     padding: 40px;
     background-color: antiquewhite;
+    font-size: 18px;
+    border: none;
 }
 
 .buttons {
-    display: block;
+    display: flex;
     position: absolute;
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
+    gap: 20px;
+}
+
+#get-cards {
+    display: none;
+}
+
+.cards-btn {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: rgb(252, 143, 0);
+    font-size: 30px;
 }
