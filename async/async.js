@@ -1,7 +1,7 @@
 const loader = document.getElementById('loader');
-const getCards = document.getElementById('get-cards');
-const deleteAllCards = document.getElementById('delete-all-cards');
-const deleteCard = document.getElementById('delete-card');
+const cardsGet = document.getElementById('get-cards');
+const allCardsDelete = document.getElementById('delete-all-cards');
+const cardDeleteBtn = document.getElementById('delete-card');
 const userCards = document.getElementById('user-cards');
 const userTemplate = document.getElementById('user-template');
 const cardsLoadBtn = document.getElementById('cards-btn');
@@ -67,7 +67,7 @@ function loadUsers() {
 cardsLoadBtn.addEventListener('click', async () => {
   cardsLoadBtn.style.display = 'none';
   buttons.style.display = 'flex';
-  getCards.style.display = 'block';
+  cardsGet.style.display = 'block';
 
   showLoader('Данные загружаются...');
 
@@ -77,7 +77,7 @@ cardsLoadBtn.addEventListener('click', async () => {
   clearLoader();
 });
 
-getCards.addEventListener('click', async () => {
+cardsGet.addEventListener('click', async () => {
   let users = getFromStorage();
 
   if (!users || !users.length) {
@@ -89,7 +89,7 @@ getCards.addEventListener('click', async () => {
   renderUsers(users);
 });
 
-deleteAllCards.addEventListener('click', () => {
+allCardsDelete.addEventListener('click', () => {
   setTimeout(() => {
     localStorage.removeItem(STORAGE_KEY);
     userCards.innerHTML = '';
@@ -97,7 +97,7 @@ deleteAllCards.addEventListener('click', () => {
   }, 500);
 });
 
-deleteCard.addEventListener('click', () => {
+cardDeleteBtn.addEventListener('click', () => {
   let users = getFromStorage();
 
   if (!users || !users.length) {
