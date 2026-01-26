@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./async.css">
+</head>
+
+<body>
+    <button class="cards-btn" id="cards-btn">Получить карточки пользователей</button>
+    <div class="load">
+        <h1 id="loader"></h1>
+    </div>
+    <div class="buttons">
+        <button class="btn" id="get-cards">
+            <h3>Получить карточки</h3>
+        </button>
+        <button class="btn" id="delete-all-cards">
+            <h3>Удалить карточки</h3>
+        </button>
+        <button class="btn" id="delete-card">
+            <h3>Удалить карточку</h3>
+        </button>
+    </div>
+
+    <ul id="user-cards"></ul>
+
+    <template id="user-template">
+        <ul class="container">
+            <li class="id user-list">User ID: </li>
+            <li class="name user-list">Name: </li>
+            <li class="surname user-list">Surname: </li>
+            <li class="email user-list">E-mail: </li>
+            <li class="age user-list">Age: </li>
+            <li class="height user-list">Height: </li>
+            </li>
+    </template>
+
+
+    <script src="/async/async.js" defer></script>
+
+</body>
+
+</html>
